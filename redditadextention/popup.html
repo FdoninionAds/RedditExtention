@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Reddit Domain Filter</title>
+  <link rel="stylesheet" href="styles.css"> <!-- Link to your external stylesheet (if any) -->
+  <script src="popup.js"></script>
+  <style>
+    body {
+      font-family: 'Arial', sans-serif;
+      margin: 20px;
+      background-color: #afafaf;
+    }
+
+    #container {
+      border-radius: 1rem;
+      border: 1px solid #333;
+      padding: 1rem;
+      background-color: #fff;
+    }
+
+    h2 {
+      color: #333;
+    }
+
+    label {
+      color: #555;
+    }
+
+    #instructions, #domainInputContainer {
+      display: flex;
+      flex-direction: column;
+      gap: 10px;
+    }
+
+    #domainInputContainer {
+      display: flex;
+      gap: 10px;
+      width: 18.75rem;
+    }
+
+    #domainInput {
+      flex-grow: 1;
+      padding: 5px;
+    }
+
+    #addDomainButton {
+      padding: 5px 10px;
+      background-color: #4caf50;
+      color: #fff;
+      border: none;
+      cursor: pointer;
+      border-radius: 3px;
+    }
+
+    #addDomainButton:hover {
+      background-color: #45a049;
+    }
+
+    #domainList {
+      list-style-type: none;
+      padding: 0;
+      margin: 0;
+      color: #333;
+    }
+
+    #domainList li {
+      margin-bottom: 5px;
+      border-radius: 0.25rem;
+      padding: 0.25rem
+    }
+  </style>
+</head>
+<body>
+  <div id="container">
+    <div id="instructions">
+      <h2>How to use:</h2>
+
+      <label for="domainInput">1. Enter a domain name you do not want to see below and click enter (format: r/domain or u/domain).</label>
+      <label for="domainInput">2. After you have added the domain name(s) to your list, reload the page for the changes to take effect.</label>
+      <label for="domainInput">3. To remove a domain name from your list, simply click the name in the list and reload the page.</label>
+      <label for="domainInput">Note that the list will show domains starting with a u/ as user/. This is to be expected.</label>
+      <label for="domainInput">When a post with a domain name matching one on your list appears, the element will be deleted.</label>
+      <label for="domainInput">I would avoid adding as many you can for fun as Reddit will act strange.</label>
+      <label for="domainInput"></label>
+
+    </div>
+
+    <div id="domainInputContainer">
+      <input type="text" id="domainInput" placeholder="Domain name" />
+      <button id="addDomainButton">Add</button>
+    </div>
+
+    <h2>Added domain names:</h2>
+    <ul id="domainList"></ul>
+  </div>
+</body>
+</html>
